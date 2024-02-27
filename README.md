@@ -245,6 +245,7 @@ Allocated pool "sess_mp_0" on socket 0
 
            2         128          32       20000       20000       19197       20584      8.3078      8.5072      264.81
 
+===
 
 $DPDK_TEST_CRYPTO_PERF/dpdk-test-crypto-perf -l 1-2 -a 0000:c5:01.0 -- --devtype crypto_qat --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only --silent --ptest throughput --total-ops 30000000
 EAL: Detected CPU lcores: 64
@@ -271,6 +272,8 @@ Allocated pool "sess_mp_0" on socket 0
            2         512          32    30000000    30000000    35686881    28074496      6.5686     26.9052      334.92
            2        1024          32    30000000    30000000    56776310    46850295      4.8532     39.7578      453.31
            2        2048          32    30000000    30000000   196942525   189059223      2.5404     41.6215      866.01
+
+===
 
 root@xeon-sm-01:/QAT# ./run-test.sh 
 $DPDK_TEST_CRYPTO_PERF/dpdk-test-crypto-perf -l 1-3 -a 0000:c5:01.0 -- --devtype crypto_qat --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only --silent --ptest throughput --total-ops 30000000 #20000
@@ -307,6 +310,7 @@ Allocated pool "sess_mp_0" on socket 0
            2        2048          32    30000000    30000000   426769812   414111927      1.3118     21.4928     1677.06
            3        2048          32    30000000    30000000   429611159   416893155      1.3118     21.4921     1677.12
 
+===
 
 root@xeon-sm-01:/QAT# ./run-test.sh 
 $DPDK_TEST_CRYPTO_PERF/dpdk-test-crypto-perf -l 1-2 -a 0000:c5:01.0 -a 0000:c5:01.1 -- --devtype crypto_qat --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only --silent --ptest throughput --total-ops 30000000
@@ -341,7 +345,8 @@ Allocated pool "sess_mp_0" on socket 0
            2        2048          32    30000000    30000000   199126532   191335254      2.5092     41.1103      876.78
 
 
-=======
+===
+
 these are from Intel DPDK QAT PERF test:
 https://fast.dpdk.org/doc/perf/DPDK_22_11_Intel_crypto_performance_report.pdf
 
@@ -407,6 +412,8 @@ $CORE_OPTION \
 -- --aead-key-sz 16 --buffer-sz 64,128,256,512,1024,2048 --optype aead --ptest throughput --aead-aad-sz 16 \
 --devtype crypto_scheduler --aead-op encrypt --burst-sz 32 --total-ops 30000000 --silent \
 --digest-sz 16 --aead-algo aes-gcm --aead-iv-sz 12 
+
+===
 
 ubuntu@xeon-sm-01:/QAT$ sudo ./run-test.sh 
 
@@ -500,6 +507,8 @@ Allocated pool "sess_mp_0" on socket 0
            2        1024          32    30000000    30000000    55257589    46470174      5.5247     45.2586      398.21
            2        2048          32    30000000    30000000   192056856   184586902      2.6627     43.6258      826.23
 
+===
+
 sudo /home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app//dpdk-test-crypto-perf   -l 2-3 -a 0000:c5:01.0   -- --devtype crypto_qat   --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc   --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-then-auth   --auth-op generate --digest-sz 20 --auth-algo sha1-hmac --auth-key-sz 64   --burst-sz 32 --silent --ptest throughput --total-ops 30000000
 EAL: Detected CPU lcores: 64
 EAL: Detected NUMA nodes: 1
@@ -561,12 +570,4 @@ Allocated pool "sess_mp_0" on socket 0
 
 ===
 
-
-
-If you could get in touch with Intel DPDK QAT folks, that would be great. Hope to close the gap soon.
-
-
-Thanks and Best!
-
-JCK
 
