@@ -2,7 +2,8 @@
 
 dpdk-test-crypto-perf
 
-Links:
+Reference Links:
+
 	https://fast.dpdk.org/doc/perf/DPDK_22_11_Intel_crypto_performance_report.pdf
 
 	https://intel.github.io/quickassist/index.html
@@ -560,42 +561,7 @@ Allocated pool "sess_mp_0" on socket 0
 
 ===
 
-Hi Ronny
 
-Thanks for your test.
-
-I made a bit modification of your test and ran on my HW:
-
-dpdk-test-crypto-perf -l 1-2 -a 0000:c5:01.0 -- --devtype crypto_qat --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only --silent --ptest throughput --total-ops 30000000
-EAL: Detected CPU lcores: 64
-EAL: Detected NUMA nodes: 1
-EAL: Detected static linkage of DPDK
-EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
-EAL: Selected IOVA mode 'PA'
-EAL: No available 2048 kB hugepages reported
-EAL: VFIO support initialized
-EAL: Using IOMMU type 1 (Type 1)
-EAL: Probe PCI driver: qat (8086:37c9) device: 0000:c5:01.0 (socket 0)
-CRYPTODEV: Creating cryptodev 0000:c5:01.0_qat_sym
-CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_sym,socket id: 0, max queue pairs: 0
-CRYPTODEV: Creating cryptodev 0000:c5:01.0_qat_asym
-CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_asym,socket id: 0, max queue pairs: 0
-Allocated pool "priv_sess_mp_0" on socket 0
-CRYPTODEV: elt_size 0 is expanded to 384
-Allocated pool "sess_mp_0" on socket 0
-lcore id Buf Size Burst Size Enqueued Dequeued Failed Enq Failed Deq MOps   Gbps    Cycles/Buf
-
-       2       64         32 30000000 30000000 46336996   41002399   6.5919 3.3750  333.74
-       2      128         32 30000000 30000000 44924829   39301224   6.5739 6.7316  334.66
-       2      256         32 30000000 30000000 39289695   32896332   6.5958 13.5081 333.55
-       2      512         32 30000000 30000000 35686881   28074496   6.5686 26.9052 334.92
-       2     1024         32 30000000 30000000 56776310   46850295   4.8532 39.7578 453.31
-       2     2048         32 30000000 30000000 196942525 189059223   2.5404 41.6215 866.01
-
-
-
-It is getting better throughput than I got before but still far less the one reported here:
-https://fast.dpdk.org/doc/perf/DPDK_22_11_Intel_crypto_performance_report.pdf
 
 If you could get in touch with Intel DPDK QAT folks, that would be great. Hope to close the gap soon.
 
