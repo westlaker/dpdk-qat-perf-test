@@ -114,90 +114,115 @@ APP options:
 		zuc-eia3
 
 --auth-op <mode>
+
 	Set authentication operation mode, where mode is one of the following:
 
 		verify
 		generate
 
 --auth-key-sz <n>
+
 	Set the size of authentication key.
 
 --auth-iv-sz <n>
+
 	Set the size of auth iv.
 
 --aead-algo <name>
+
 	Set AEAD algorithm name, where name is one of the following:
 
 		aes-ccm
 		aes-gcm
 
 --aead-op <mode>
+
 	Set AEAD operation mode, where mode is one of the following:
 
 		encrypt
 		decrypt
 
 --aead-key-sz <n>
+
 	Set the size of AEAD key.
 
 --aead-iv-sz <n>
+
 	Set the size of AEAD iv.
 
 --aead-aad-sz <n>
+
 	Set the size of AEAD aad.
 
 --digest-sz <n>
+
 	Set the size of digest.
 
 --desc-nb <n>
 	Set number of descriptors for each crypto device.
 
 --pmd-cyclecount-delay-ms <n>
+
 	Add a delay (in milliseconds) between enqueue and dequeue in pmd-cyclecount benchmarking mode (useful when benchmarking hardware acceleration).
 
 --csv-friendly
+
 	Enable test result output CSV friendly rather than human friendly.
 
 --pdcp-sn-sz <n>
+
 	Set PDCP sequence number size(n) in bits. Valid values of n will be 5/7/12/15/18.
 
 --pdcp-domain <control/user>
+
 	Set PDCP domain to specify short_mac/control/user plane.
 
 --docsis-hdr-sz <n>
+
 	Set DOCSIS header size(n) in bytes.
 
 --pdcp-ses-hfn-en
+
 	Enable fixed session based HFN instead of per packet HFN.
 
 --enable-sdap
+
 	Enable Service Data Adaptation Protocol.
 
 --modex-len <n>
+
 	Set modex length for asymmetric crypto perf test. Supported lengths are 60, 128, 255, 448. Default length is 128.
 
 --sessionless
+
 	Enable session-less crypto operations mode.
 
 --out-of-place
+
 	Enable out-of-place crypto operations mode.
 
 --test-file <name>
+
 	Set test vector file path. See the Test Vector File chapter.
 
 --test-name <name>
+
 	Set specific test name section in the test vector file.
 
 --silent
+
 	Disable options dump.
 
 --pool-sz <n>
+
 	Set the number of mbufs to be allocated in the mbuf pool.
 
 --total-ops <n>
+
 	Set the number of total operations performed.
 
 --burst-sz <n>
+
 	Set the number of packets per burst.
 	This can be set as:
 		Single value (i.e. --burst-sz 16)
@@ -205,6 +230,7 @@ APP options:
 		List of values, up to 32 values, separated in commas (i.e. --burst-sz 16,24,32)
 
 --buffer-sz <n>
+
 	Set the size of single packet (plaintext or ciphertext in it).
 	This can be set as:
 		Single value (i.e. --buffer-sz 16)
@@ -212,10 +238,12 @@ APP options:
 		List of values, up to 32 values, separated in commas (i.e. --buffer-sz 32,64,128)
 
 --imix <n>
+
 	Set the distribution of packet sizes.
 	A list of weights must be passed, containing the same number of items than buffer-sz, so each item in this list will be the weight of the packet size on the same position in the buffer-sz parameter (a list have to be passed in that parameter).
 
 Example:
+
 	To test a distribution of 20% packets of 64 bytes, 40% packets of 100 bytes and 40% packets of 256 bytes, the command line would be: --buffer-sz 64,100,256 --imix 20,40,40. Note that the weights do not have to be percentages, so using --imix 1,2,2 would result in the same distribution
 
 --segment-sz <n>
@@ -225,6 +253,7 @@ Example:
 
 root@xeon-sm-01:/QAT# ./run-test.sh 
 $DPDK_TEST_CRYPTO_PERF/dpdk-test-crypto-perf -l 1-2 -a 0000:c5:01.0 -- --devtype crypto_qat --buffer-sz 128 --cipher-algo aes-cbc --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only --silent --ptest throughput --total-ops 20000
+
 EAL: Detected CPU lcores: 64
 EAL: Detected NUMA nodes: 1
 EAL: Detected static linkage of DPDK
@@ -241,6 +270,7 @@ CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_asym,socket id: 0,
 Allocated pool "priv_sess_mp_0" on socket 0
 CRYPTODEV: elt_size 0 is expanded to 384
 Allocated pool "sess_mp_0" on socket 0
+
     lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
 
            2         128          32       20000       20000       19197       20584      8.3078      8.5072      264.81
@@ -248,6 +278,7 @@ Allocated pool "sess_mp_0" on socket 0
 ===
 
 $DPDK_TEST_CRYPTO_PERF/dpdk-test-crypto-perf -l 1-2 -a 0000:c5:01.0 -- --devtype crypto_qat --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only --silent --ptest throughput --total-ops 30000000
+
 EAL: Detected CPU lcores: 64
 EAL: Detected NUMA nodes: 1
 EAL: Detected static linkage of DPDK
@@ -264,6 +295,7 @@ CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_asym,socket id: 0,
 Allocated pool "priv_sess_mp_0" on socket 0
 CRYPTODEV: elt_size 0 is expanded to 384
 Allocated pool "sess_mp_0" on socket 0
+
     lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
 
            2          64          32    30000000    30000000    46336996    41002399      6.5919      3.3750      333.74
@@ -314,6 +346,7 @@ Allocated pool "sess_mp_0" on socket 0
 
 root@xeon-sm-01:/QAT# ./run-test.sh 
 $DPDK_TEST_CRYPTO_PERF/dpdk-test-crypto-perf -l 1-2 -a 0000:c5:01.0 -a 0000:c5:01.1 -- --devtype crypto_qat --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only --silent --ptest throughput --total-ops 30000000
+
 EAL: Detected CPU lcores: 64
 EAL: Detected NUMA nodes: 1
 EAL: Detected static linkage of DPDK
@@ -335,6 +368,7 @@ CRYPTODEV: Initialisation parameters - name: 0000:c5:01.1_qat_asym,socket id: 0,
 Allocated pool "priv_sess_mp_0" on socket 0
 CRYPTODEV: elt_size 0 is expanded to 384
 Allocated pool "sess_mp_0" on socket 0
+
     lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
 
            2          64          32    30000000    30000000    57120310    52872213      6.4566      3.3058      340.74
@@ -439,6 +473,7 @@ cryptodev_scheduler_create() line 190:   Packet ordering = disable
 Allocated pool "priv_sess_mp_0" on socket 0
 CRYPTODEV: elt_size 0 is expanded to 384
 Allocated pool "sess_mp_0" on socket 0
+
     lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
 
            2          64          32    30000000    30000000    40796324    35512685      6.7107      3.4359      327.83
@@ -453,6 +488,7 @@ Allocated pool "sess_mp_0" on socket 0
 ubuntu@xeon-sm-01:~/dpdk-qat-test$ ./run-test.sh 
 
 sudo /home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app//dpdk-test-crypto-perf   -l 1-2 -a 0000:c5:01.0   -- --devtype crypto_qat   --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc   --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only   --burst-sz 32 --silent --ptest throughput --total-ops 3000000
+
 EAL: Detected CPU lcores: 64
 EAL: Detected NUMA nodes: 1
 EAL: Detected static linkage of DPDK
@@ -469,6 +505,7 @@ CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_asym,socket id: 0,
 Allocated pool "priv_sess_mp_0" on socket 0
 CRYPTODEV: elt_size 0 is expanded to 384
 Allocated pool "sess_mp_0" on socket 0
+
     lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
 
            2          64          32    30000000    30000000    35236778    31004418      8.3687      4.2848      262.88
@@ -482,6 +519,7 @@ Allocated pool "sess_mp_0" on socket 0
 
 ubuntu@xeon-sm-01:~/dpdk-qat-test$ ./run-test.sh 
 sudo /home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app//dpdk-test-crypto-perf   -l 1-2 -a 0000:c5:01.0   -- --devtype crypto_qat   --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc   --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only   --burst-sz 32 --silent --ptest throughput --total-ops 3000000
+
 EAL: Detected CPU lcores: 64
 EAL: Detected NUMA nodes: 1
 EAL: Detected static linkage of DPDK
@@ -498,6 +536,7 @@ CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_asym,socket id: 0,
 Allocated pool "priv_sess_mp_0" on socket 0
 CRYPTODEV: elt_size 0 is expanded to 384
 Allocated pool "sess_mp_0" on socket 0
+
     lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
 
            2          64          32    30000000    30000000    35707379    31457493      8.3489      4.2746      263.51
@@ -510,6 +549,7 @@ Allocated pool "sess_mp_0" on socket 0
 ===
 
 sudo /home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app//dpdk-test-crypto-perf   -l 2-3 -a 0000:c5:01.0   -- --devtype crypto_qat   --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc   --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-then-auth   --auth-op generate --digest-sz 20 --auth-algo sha1-hmac --auth-key-sz 64   --burst-sz 32 --silent --ptest throughput --total-ops 30000000
+
 EAL: Detected CPU lcores: 64
 EAL: Detected NUMA nodes: 1
 EAL: Detected static linkage of DPDK
@@ -526,6 +566,7 @@ CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_asym,socket id: 0,
 Allocated pool "priv_sess_mp_0" on socket 0
 CRYPTODEV: elt_size 0 is expanded to 384
 Allocated pool "sess_mp_0" on socket 0
+
     lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
 
            3          64          32    30000000    30000000    49988046    43823248      6.1343      3.1407      358.64
@@ -539,6 +580,7 @@ Allocated pool "sess_mp_0" on socket 0
 
 ubuntu@xeon-sm-01:~/dpdk-qat-test$ ./run-test.sh 2
 sudo /home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app//dpdk-test-crypto-perf                 -l 2-3 -a 0000:c5:01.0                  --vdev crypto_aesni_mb                  -- --devtype crypto_aesni_mb            --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc                 --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-then-auth              --auth-op generate --digest-sz 12 --auth-algo sha1-hmac --auth-key-sz 64          --burst-sz 32 --silent --ptest throughput --total-ops 30000000 --csv-friendly
+
 EAL: Detected CPU lcores: 64
 EAL: Detected NUMA nodes: 1
 EAL: Detected static linkage of DPDK
@@ -559,6 +601,7 @@ ipsec_mb_create() line 139: IPSec Multi-buffer library version used: 1.2.0
 Allocated pool "priv_sess_mp_0" on socket 0
 CRYPTODEV: elt_size 0 is expanded to 384
 Allocated pool "sess_mp_0" on socket 0
+
     lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
 
            3          64          32    30000000    30000000           0           0      6.2125      3.1808      354.12
