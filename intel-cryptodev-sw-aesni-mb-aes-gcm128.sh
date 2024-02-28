@@ -17,8 +17,9 @@ QAT_PF2=0000:c7:01
 
 sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf \
 	--socket-mem 2048,0 --legacy-mem \
+	-a 0000:c5:01.0 \
 	--vdev crypto_aesni_gcm_pmd_1 -l 9,10 -n 6 \
 	-- --aead-key-sz 16 --buffer-sz 64,128,256,512,1024,2048 \
 	--optype aead --ptest throughput --aead-aad-sz 16 \
 	--devtype crypto_aesni_gcm --aead-op encrypt --burst-sz 32 \
-	--total-ops 10000000 --silent --digest-sz 16 --aead-algo aes-gcm --aeadiv-sz 12
+	--total-ops 10000000 --digest-sz 16 --aead-algo aes-gcm --aead-iv-sz 12

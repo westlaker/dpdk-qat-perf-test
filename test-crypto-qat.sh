@@ -42,7 +42,7 @@ sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf --socket-mem 2048,0 --legacy
 --vdev crypto_scheduler_pmd_6,worker=${QAT_PF0}.5_qat_sym,worker=${QAT_PF1}.5_qat_sym,worker=${QAT_PF2}.5_qat_sym,mode=round-robin \
 $CORE_OPTION \
 -- --buffer-sz 64,128,256,512,1024,2048 --optype cipher-then-auth --ptest throughput --auth-key-sz 64 \
---cipher-key-sz 16 --devtype crypto_scheduler --cipher-iv-sz 16 --auth-op generate --burst-sz 32 --total-ops 30000000 --silent \
+--cipher-key-sz 16 --devtype crypto_scheduler --cipher-iv-sz 16 --auth-op generate --burst-sz 32 --total-ops 30000000 \
 --digest-sz 20 --auth-algo sha1-hmac --cipher-algo aes-cbc --cipher-op encrypt >> ${LOG_FILE} 2>&1
 
 echo "======================================================================"
@@ -69,7 +69,7 @@ sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf --socket-mem 2048,0 --legacy
 --vdev crypto_scheduler_pmd_6,worker=${QAT_PF0}.5_qat_sym,worker=${QAT_PF1}.5_qat_sym,worker=${QAT_PF2}.5_qat_sym,mode=round-robin \
 $CORE_OPTION \
 -- --buffer-sz 64,128,256,512,1024,2048 --optype cipher-then-auth --ptest throughput --auth-key-sz 64 \
---cipher-key-sz 16 --devtype crypto_scheduler --cipher-iv-sz 16 --auth-op generate --burst-sz 32 --total-ops 30000000 --silent \
+--cipher-key-sz 16 --devtype crypto_scheduler --cipher-iv-sz 16 --auth-op generate --burst-sz 32 --total-ops 30000000 \
 --digest-sz 32 --auth-algo sha2-256-hmac --cipher-algo aes-cbc --cipher-op encrypt >> ${LOG_FILE} 2>&1
 
 
@@ -97,5 +97,5 @@ sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf --socket-mem 2048,0 --legacy
 --vdev crypto_scheduler_pmd_6,worker=${QAT_PF0}.5_qat_sym,worker=${QAT_PF1}.5_qat_sym,worker=${QAT_PF2}.5_qat_sym,mode=round-robin \
 $CORE_OPTION \
 -- --aead-key-sz 16 --buffer-sz 64,128,256,512,1024,2048 --optype aead --ptest throughput --aead-aad-sz 16 \
---devtype crypto_scheduler --aead-op encrypt --burst-sz 32 --total-ops 30000000 --silent \
+--devtype crypto_scheduler --aead-op encrypt --burst-sz 32 --total-ops 30000000 \
 --digest-sz 16 --aead-algo aes-gcm --aead-iv-sz 12 >> ${LOG_FILE} 2>&1

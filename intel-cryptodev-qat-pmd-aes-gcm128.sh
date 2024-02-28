@@ -29,9 +29,9 @@ sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf \
 	--vdev crypto_scheduler_pmd_4,worker=0000:c5:01.3_qat_sym,worker=0000:c6:01.3_qat_sym,worker=0000:c7:01.3_qat_sym,mode=round-robin \
 	--vdev crypto_scheduler_pmd_5,worker=0000:c5:01.4_qat_sym,worker=0000:c6:01.4_qat_sym,worker=0000:c7:01.4_qat_sym,mode=round-robin \
 	--vdev crypto_scheduler_pmd_6,worker=0000:c5:01.5_qat_sym,worker=0000:c6:01.5_qat_sym,worker=0000:c7:01.5_qat_sym,mode=round-robin \
-	-l 9,10,66,11,67,12,68 -n 6 \
+	-l 9,10,60,11,61,12,62 -n 6 \
 	-- --aead-key-sz 16 --buffer-sz 64,128,256,512,1024,2048 \
 	--optype aead --ptest throughput --aead-aad-sz 16 \
-	--devtype crypto_scheduler --aead-op encrypt --burst-sz 32 --total-ops 30000000 --silent \
+	--devtype crypto_scheduler --aead-op encrypt --burst-sz 32 --total-ops 30000000 \
 	--digest-sz 16 --aead-algo aes-gcm --aead-iv-sz 12
 

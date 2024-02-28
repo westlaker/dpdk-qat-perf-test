@@ -17,10 +17,11 @@ QAT_PF2=0000:c7:01
 
 sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf \
 	--socket-mem 2048,0 --legacy-mem \
+	-a 0000:c5:01.0 \
 	--vdev crypto_aesni_mb_pmd_1 -l 9,10 -n 6 \
 	-- --buffer-sz 64,128,256,512,1024,2048 \
 	--optype cipher-then-auth --ptest throughput \
 	--auth-key-sz 64 --cipher-key-sz 16 \
 	--devtype crypto_aesni_mb --cipher-iv-sz 16 --auth-op generate \
-	--burst-sz 32 --total-ops 10000000 --silent \
+	--burst-sz 32 --total-ops 10000000 \
 	--digest-sz 16 --auth-algo sha2-256-hmac --cipher-algo aes-cbc --cipher-op encrypt

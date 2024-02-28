@@ -23,14 +23,14 @@ case $1 in
 		  -- --devtype crypto_qat \
 		  --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc \
 		  --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only \
-		  --burst-sz 32 --silent --ptest throughput --total-ops 3000000 --csv-friendly"
+		  --burst-sz 32 --ptest throughput --total-ops 3000000 "
 
 		sudo $DPDK_TEST_CRYPTO_PERF/dpdk-test-crypto-perf \
 		  -l 1-2 -a ${QAT_PF0}.0 \
 		  -- --devtype crypto_qat \
 		  --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc \
 		  --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only \
-		  --burst-sz 32 --silent --ptest throughput --total-ops 30000000
+		  --burst-sz 32 --ptest throughput --total-ops 30000000 
 		;;
 
 	1)
@@ -41,7 +41,7 @@ case $1 in
 		  --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc \
 		  --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-then-auth \
 		  --auth-op generate --digest-sz 20 --auth-algo sha1-hmac --auth-key-sz 64 \
-		  --burst-sz 32 --silent --ptest throughput --total-ops 30000000 --csv-friendly"
+		  --burst-sz 32 --ptest throughput --total-ops 30000000 "
 
 		sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf \
 		  -l 2-3 -a ${QAT_PF0}.0 \
@@ -49,7 +49,7 @@ case $1 in
 		  --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc \
 		  --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-then-auth \
 		  --auth-op generate --digest-sz 20 --auth-algo sha1-hmac --auth-key-sz 64 \
-		  --burst-sz 32 --silent --ptest throughput --total-ops 30000000 
+		  --burst-sz 32 --ptest throughput --total-ops 30000000 
 		;;
 
 	2)
@@ -61,7 +61,7 @@ case $1 in
 		  --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc \
 		  --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-then-auth \
 		  --auth-op generate --digest-sz 12 --auth-algo sha1-hmac --auth-key-sz 64 \
-		  --burst-sz 32 --silent --ptest throughput --total-ops 30000000 --csv-friendly"
+		  --burst-sz 32 --ptest throughput --total-ops 30000000 "
 
 
 		sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf \
@@ -71,7 +71,7 @@ case $1 in
 		  --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc \
 		  --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-then-auth \
 		  --auth-op generate --digest-sz 12 --auth-algo sha1-hmac --auth-key-sz 64 \
-		  --burst-sz 32 --silent --ptest throughput --total-ops 30000000
+		  --burst-sz 32 --ptest throughput --total-ops 30000000 
 		;;
 	3)
 
@@ -82,7 +82,7 @@ case $1 in
 		  -- --devtype crypto_aesni_mb \
 		  --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc \
 		  --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only \
-		  --burst-sz 32 --silent --ptest latency --total-ops 30 --csv-friendly"
+		  --burst-sz 32 --ptest latency --total-ops 30 "
 
 		sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf \
 		  -l 4-7 -a ${QAT_PF0}.0 \
@@ -91,7 +91,7 @@ case $1 in
 		  -- --devtype crypto_aesni_mb \
 		  --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc \
 		  --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only \
-		  --burst-sz 32 --silent --ptest latency --total-ops 30 --csv-friendly
+		  --burst-sz 32 --ptest latency --total-ops 30
 		;;
 	4)
 
@@ -101,7 +101,7 @@ case $1 in
 		  -- --devtype crypto_openssl \
 		  --buffer-sz 64,128,256,512,1024,2048 --aead-algo aes-gcm \
 		  --aead-key-sz 16 --aead-iv-sz 16 --aead-op encrypt --aead-aad-sz 16 --digest-sz 16 --optype aead \
-		  --burst-sz 32 --silent --ptest verify --total-ops 30 --csv-friendly --test-file test_aes_gcm.data"
+		  --burst-sz 32 --ptest verify --total-ops 30 --test-file test_aes_gcm.data"
 
 		sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf \
 		  -l 4-7 -a ${QAT_PF0}.0 \
@@ -109,6 +109,6 @@ case $1 in
 		  -- --devtype crypto_openssl \
 		  --buffer-sz 64,128,256,512,1024,2048 --aead-algo aes-gcm \
 		  --aead-key-sz 16 --aead-iv-sz 16 --aead-op encrypt --aead-aad-sz 16 --digest-sz 16 --optype aead \
-		  --burst-sz 32 --silent --ptest verify --total-ops 30 --csv-friendly --test-file test_aes_gcm.data
+		  --burst-sz 32 --ptest verify --total-ops 30 --test-file test_aes_gcm.data
 		;;
 esac
