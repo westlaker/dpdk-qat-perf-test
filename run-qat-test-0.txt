@@ -1,0 +1,49 @@
+sudo /home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app//dpdk-test-crypto-perf 		  -l 1-2 -a 0000:c5:01.0 		  -- --devtype crypto_qat 		  --buffer-sz 64,128,256,512,1024,2048 --cipher-algo aes-cbc 		  --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only 		  --burst-sz 32 --ptest throughput --total-ops 3000000 
+EAL: Detected CPU lcores: 64
+EAL: Detected NUMA nodes: 1
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 2048 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Using IOMMU type 1 (Type 1)
+EAL: Probe PCI driver: qat (8086:37c9) device: 0000:c5:01.0 (socket 0)
+CRYPTODEV: Creating cryptodev 0000:c5:01.0_qat_sym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 0000:c5:01.0_qat_asym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_asym,socket id: 0, max queue pairs: 0
+CRYPTODEV: elt_size 0 is expanded to 384
+Allocated pool "priv_sess_mp_0" on socket 0
+Allocated pool "sess_mp_0" on socket 0
+# Crypto Performance Application Options:
+#
+# cperf test: throughput
+#
+# size of crypto op / mbuf pool: 8192
+# total number of ops: 30000000
+# buffer sizes: 64 128 256 512 1024 2048 
+# burst sizes: 32 
+
+# segment size: 2048
+#
+# cryptodev type: crypto_qat
+#
+# number of queue pairs per device: 1
+# crypto operation: cipher-only
+# sessionless: no
+# out of place: no
+#
+# cipher algorithm: aes-cbc
+# cipher operation: encrypt
+# cipher key size: 16
+# cipher iv size: 16
+#
+    lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
+
+           2          64          32    30000000    30000000    35813345    31577560      8.3370      4.2685      263.89
+           2         128          32    30000000    30000000    35578873    31124798      8.3076      8.5069      264.82
+           2         256          32    30000000    30000000    35279217    30244662      8.1135     16.6165      271.15
+           2         512          32    30000000    30000000    34253398    27860203      7.5811     31.0522      290.20
+           2        1024          32    30000000    30000000    55246552    46461231      5.5219     45.2352      398.42
+           2        2048          32    30000000    30000000   191861426   184334692      2.6615     43.6058      826.61
+
