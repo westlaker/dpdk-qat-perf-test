@@ -2,6 +2,9 @@ DPDK_TEST_CRYPTO_PERF=home/ubuntu/dpdk-stable-21.11.1/build/app/
 QAT_PF0=000c:03:01
 QAT_PF1=000c:04:01
 QAT_PF2=000c:05:01
+#QAT_PF0=0000:c5:01
+#QAT_PF1=0000:c6:01
+#QAT_PF2=0000:c7:01
 
 echo "QAT perf for AES-CBC-128/SHA1-HMAC"
 sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf --socket-mem 2048,0 \
