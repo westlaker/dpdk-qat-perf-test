@@ -1,0 +1,213 @@
+EAL: Detected CPU lcores: 80
+EAL: Detected NUMA nodes: 1
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 2048 kB hugepages reported
+EAL: No available 32768 kB hugepages reported
+EAL: No available 64 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Using IOMMU type 1 (Type 1)
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:03:01.0 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:03:01.0_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.0_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:03:01.0_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.0_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:03:01.1 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:03:01.1_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.1_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:03:01.1_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.1_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:03:01.2 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:03:01.2_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.2_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:03:01.2_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.2_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:03:01.3 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:03:01.3_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.3_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:03:01.3_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.3_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:03:01.4 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:03:01.4_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.4_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:03:01.4_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.4_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:03:01.5 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:03:01.5_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.5_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:03:01.5_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:03:01.5_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:04:01.0 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:04:01.0_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.0_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:04:01.0_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.0_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:04:01.1 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:04:01.1_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.1_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:04:01.1_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.1_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:04:01.2 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:04:01.2_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.2_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:04:01.2_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.2_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:04:01.3 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:04:01.3_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.3_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:04:01.3_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.3_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:04:01.4 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:04:01.4_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.4_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:04:01.4_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.4_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:04:01.5 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:04:01.5_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.5_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:04:01.5_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:04:01.5_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:05:01.0 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:05:01.0_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.0_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:05:01.0_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.0_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:05:01.1 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:05:01.1_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.1_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:05:01.1_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.1_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:05:01.2 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:05:01.2_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.2_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:05:01.2_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.2_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:05:01.3 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:05:01.3_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.3_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:05:01.3_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.3_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:05:01.4 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:05:01.4_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.4_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:05:01.4_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.4_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 000c:05:01.5 (socket 0)
+CRYPTODEV: Creating cryptodev 000c:05:01.5_qat_sym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.5_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 000c:05:01.5_qat_asym
+CRYPTODEV: Initialisation parameters - name: 000c:05:01.5_qat_asym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev crypto_scheduler_pmd_1
+CRYPTODEV: Initialisation parameters - name: crypto_scheduler_pmd_1,socket id: 0, max queue pairs: 8
+cryptodev_scheduler_create() line 135:   Scheduling mode = round-robin
+cryptodev_scheduler_create() line 190:   Packet ordering = disable
+CRYPTODEV: Creating cryptodev crypto_scheduler_pmd_2
+CRYPTODEV: Initialisation parameters - name: crypto_scheduler_pmd_2,socket id: 0, max queue pairs: 8
+cryptodev_scheduler_create() line 135:   Scheduling mode = round-robin
+cryptodev_scheduler_create() line 190:   Packet ordering = disable
+CRYPTODEV: Creating cryptodev crypto_scheduler_pmd_3
+CRYPTODEV: Initialisation parameters - name: crypto_scheduler_pmd_3,socket id: 0, max queue pairs: 8
+cryptodev_scheduler_create() line 135:   Scheduling mode = round-robin
+cryptodev_scheduler_create() line 190:   Packet ordering = disable
+CRYPTODEV: Creating cryptodev crypto_scheduler_pmd_4
+CRYPTODEV: Initialisation parameters - name: crypto_scheduler_pmd_4,socket id: 0, max queue pairs: 8
+cryptodev_scheduler_create() line 135:   Scheduling mode = round-robin
+cryptodev_scheduler_create() line 190:   Packet ordering = disable
+CRYPTODEV: Creating cryptodev crypto_scheduler_pmd_5
+CRYPTODEV: Initialisation parameters - name: crypto_scheduler_pmd_5,socket id: 0, max queue pairs: 8
+cryptodev_scheduler_create() line 135:   Scheduling mode = round-robin
+cryptodev_scheduler_create() line 190:   Packet ordering = disable
+CRYPTODEV: Creating cryptodev crypto_scheduler_pmd_6
+CRYPTODEV: Initialisation parameters - name: crypto_scheduler_pmd_6,socket id: 0, max queue pairs: 8
+cryptodev_scheduler_create() line 135:   Scheduling mode = round-robin
+cryptodev_scheduler_create() line 190:   Packet ordering = disable
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_1 attached worker 000c:05:01.0_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_1 attached worker 000c:04:01.0_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_1 attached worker 000c:03:01.0_qat_sym
+CRYPTODEV: elt_size 0 is expanded to 288
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_2 attached worker 000c:05:01.1_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_2 attached worker 000c:04:01.1_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_2 attached worker 000c:03:01.1_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_3 attached worker 000c:05:01.2_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_3 attached worker 000c:04:01.2_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_3 attached worker 000c:03:01.2_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_4 attached worker 000c:05:01.3_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_4 attached worker 000c:04:01.3_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_4 attached worker 000c:03:01.3_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_5 attached worker 000c:05:01.4_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_5 attached worker 000c:04:01.4_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_5 attached worker 000c:03:01.4_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_6 attached worker 000c:05:01.5_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_6 attached worker 000c:04:01.5_qat_sym
+scheduler_attach_init_worker() line 44: Scheduler crypto_scheduler_pmd_6 attached worker 000c:03:01.5_qat_sym
+Allocated pool "priv_sess_mp_0" on socket 0
+Allocated pool "sess_mp_0" on socket 0
+# Crypto Performance Application Options:
+#
+# cperf test: throughput
+#
+# size of crypto op / mbuf pool: 8192
+# total number of ops: 30000000
+# buffer sizes: 64 128 256 512 1024 2048 
+# burst sizes: 32 
+
+# segment size: 2080
+#
+# cryptodev type: crypto_scheduler
+#
+# number of queue pairs per device: 1
+# crypto operation: cipher-then-auth
+# sessionless: no
+# out of place: no
+#
+# auth algorithm: sha2-256-hmac
+# auth operation: generate
+# auth key size: 64
+# auth iv size: 0
+# auth digest size: 32
+#
+# cipher algorithm: aes-cbc
+# cipher operation: encrypt
+# cipher key size: 16
+# cipher iv size: 16
+#
+    lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
+
+          61          64          32    30000000    30000000    57052308    40417593      2.8922      1.4808        8.64
+          60          64          32    30000000    30000000    57421349    40777159      2.8919      1.4806        8.64
+          62          64          32    30000000    30000000    56237361    39659947      2.8918      1.4806        8.65
+          11          64          32    30000000    30000000    57342928    40710557      2.8919      1.4806        8.64
+          10          64          32    30000000    30000000    56946207    40292762      2.8917      1.4805        8.65
+          12          64          32    30000000    30000000    58746983    42048869      2.8915      1.4805        8.65
+          11         128          32    30000000    30000000    58097674    41147098      2.8198      2.8875        8.87
+          12         128          32    30000000    30000000    59226049    42204289      2.8190      2.8867        8.87
+          60         128          32    30000000    30000000    57955668    40970013      2.8190      2.8867        8.87
+          61         128          32    30000000    30000000    57620276    40617372      2.8189      2.8865        8.87
+          62         128          32    30000000    30000000    56725201    39818511      2.8188      2.8865        8.87
+          10         128          32    30000000    30000000    57344132    40348844      2.8189      2.8866        8.87
+          62         256          32    30000000    30000000    79487086    58452959      2.2222      4.5510       11.25
+          61         256          32    30000000    30000000    80612935    59473523      2.2217      4.5501       11.25
+          60         256          32    30000000    30000000    81126744    59982293      2.2217      4.5500       11.25
+          11         256          32    30000000    30000000    81257178    60115749      2.2215      4.5496       11.25
+          12         256          32    30000000    30000000    83090097    61864668      2.2213      4.5493       11.25
+          10         256          32    30000000    30000000    80458550    59305785      2.2213      4.5492       11.25
+          10         512          32    30000000    30000000   163320228   140067532      1.4718      6.0285       16.99
+          12         512          32    30000000    30000000   167188050   143895223      1.4716      6.0278       16.99
+          61         512          32    30000000    30000000   164224142   140938389      1.4715      6.0271       16.99
+          62         512          32    30000000    30000000   162538324   139278184      1.4707      6.0240       17.00
+          11         512          32    30000000    30000000   164011947   140694305      1.4707      6.0240       17.00
+          60         512          32    30000000    30000000   164339328   141025242      1.4706      6.0236       17.00
+          10        1024          32    30000000    30000000   340403703   315728160      0.8893      7.2848       28.11
+          12        1024          32    30000000    30000000   345262403   320573110      0.8891      7.2837       28.12
+          61        1024          32    30000000    30000000   342768041   318048951      0.8890      7.2829       28.12
+          62        1024          32    30000000    30000000   339132871   314414101      0.8884      7.2782       28.14
+          60        1024          32    30000000    30000000   340732768   315987270      0.8884      7.2780       28.14
+          11        1024          32    30000000    30000000   342434110   317648452      0.8884      7.2780       28.14
+          11        2048          32    30000000    30000000   762540567   740173239      0.4728      7.7459       52.88
+          10        2048          32    30000000    30000000   759289162   736938630      0.4728      7.7456       52.88
+          62        2048          32    30000000    30000000   762719949   740417755      0.4728      7.7455       52.88
+          60        2048          32    30000000    30000000   760126421   737763249      0.4727      7.7455       52.88
+          12        2048          32    30000000    30000000   768883564   746540182      0.4728      7.7455       52.88
+          61        2048          32    30000000    30000000   763183378   740722305      0.4727      7.7454       52.88
+

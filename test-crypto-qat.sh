@@ -1,8 +1,11 @@
 DPDK_TEST_CRYPTO_PERF=/home/ubuntu/dpdk-stable-21.11.4/build/app/
-DPDK_TEST_CRYPTO_PERF=/home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app/
-QAT_PF0=0000:c5:01
-QAT_PF1=0000:c6:01
-QAT_PF2=0000:c7:01
+#DPDK_TEST_CRYPTO_PERF=/home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app/
+#QAT_PF0=0000:c5:01
+#QAT_PF1=0000:c6:01
+#QAT_PF2=0000:c7:01
+QAT_PF0=000c:03:01
+QAT_PF1=000c:04:01
+QAT_PF2=000c:05:01
 
 timestamp() {
     date +"%Y-%m-%d-%H-%M-%S"

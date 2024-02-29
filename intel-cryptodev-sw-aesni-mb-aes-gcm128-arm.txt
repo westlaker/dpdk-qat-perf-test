@@ -1,0 +1,7 @@
+EAL: Detected CPU lcores: 80
+EAL: Detected NUMA nodes: 1
+EAL: Detected static linkage of DPDK
+EAL: failed to parse device "crypto_aesni_gcm_pmd_1"
+EAL: Unable to parse device 'crypto_aesni_gcm_pmd_1'
+EAL: Error - exiting with code: 1
+  Cause: Invalid EAL arguments!

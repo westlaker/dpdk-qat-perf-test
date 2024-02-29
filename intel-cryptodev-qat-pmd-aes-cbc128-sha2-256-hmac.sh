@@ -1,10 +1,13 @@
 # from https://fast.dpdk.org/doc/perf/DPDK_23_03_Intel_crypto_performance_report.pdf
 # TEST CASE : cryptodev-qat-pmd-aes-cbc128-sha2-256-hmac
 DPDK_TEST_CRYPTO_PERF=/home/ubuntu/dpdk-stable-21.11.4/build/app/
-DPDK_TEST_CRYPTO_PERF=/home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app/
-QAT_PF0=0000:c5:01
-QAT_PF1=0000:c6:01
-QAT_PF2=0000:c7:01
+#DPDK_TEST_CRYPTO_PERF=/home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app/
+QAT_PF0=000c:03:01
+QAT_PF1=000c:04:01
+QAT_PF2=000c:05:01
+#QAT_PF0=0000:c5:01
+#QAT_PF1=0000:c6:01
+#QAT_PF2=0000:c7:01
 
 # results published by Intel
 #Buffer Size (Bytes) AES-CBC-128/SHA1-HMAC (Gbps) AES-CBC-128/SHA2-256-HMAC (Gbps) AES-GCM-128 (Gbps)
@@ -17,18 +20,18 @@ QAT_PF2=0000:c7:01
 
 sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf \
 	--socket-mem 2048,0 --legacy-mem \
-	-a 0000:c5:01.0 -a 0000:c6:01.0 -a 0000:c7:01.0 \
-	-a 0000:c5:01.1 -a 0000:c6:01.1 -a 0000:c7:01.1 \
-	-a 0000:c5:01.2 -a 0000:c6:01.2 -a 0000:c7:01.2 \
-	-a 0000:c5:01.3 -a 0000:c6:01.3 -a 0000:c7:01.3 \
-	-a 0000:c5:01.4 -a 0000:c6:01.4 -a 0000:c7:01.4 \
-	-a 0000:c5:01.5 -a 0000:c6:01.5 -a 0000:c7:01.5 \
-	--vdev crypto_scheduler_pmd_1,worker=0000:c5:01.0_qat_sym,worker=0000:c6:01.0_qat_sym,worker=0000:c7:01.0_qat_sym,mode=round-robin \
-	--vdev crypto_scheduler_pmd_2,worker=0000:c5:01.1_qat_sym,worker=0000:c6:01.1_qat_sym,worker=0000:c7:01.1_qat_sym,mode=round-robin \
-	--vdev crypto_scheduler_pmd_3,worker=0000:c5:01.2_qat_sym,worker=0000:c6:01.2_qat_sym,worker=0000:c7:01.2_qat_sym,mode=round-robin \
-	--vdev crypto_scheduler_pmd_4,worker=0000:c5:01.3_qat_sym,worker=0000:c6:01.3_qat_sym,worker=0000:c7:01.3_qat_sym,mode=round-robin \
-	--vdev crypto_scheduler_pmd_5,worker=0000:c5:01.4_qat_sym,worker=0000:c6:01.4_qat_sym,worker=0000:c7:01.4_qat_sym,mode=round-robin \
-	--vdev crypto_scheduler_pmd_6,worker=0000:c5:01.5_qat_sym,worker=0000:c6:01.5_qat_sym,worker=0000:c7:01.5_qat_sym,mode=round-robin \
+	-a ${QAT_PF0}.0 -a ${QAT_PF1}.0 -a ${QAT_PF2}.0 \
+	-a ${QAT_PF0}.1 -a ${QAT_PF1}.1 -a ${QAT_PF2}.1 \
+	-a ${QAT_PF0}.2 -a ${QAT_PF1}.2 -a ${QAT_PF2}.2 \
+	-a ${QAT_PF0}.3 -a ${QAT_PF1}.3 -a ${QAT_PF2}.3 \
+	-a ${QAT_PF0}.4 -a ${QAT_PF1}.4 -a ${QAT_PF2}.4 \
+	-a ${QAT_PF0}.5 -a ${QAT_PF1}.5 -a ${QAT_PF2}.5 \
+	--vdev crypto_scheduler_pmd_1,worker=${QAT_PF0}.0_qat_sym,worker=${QAT_PF1}.0_qat_sym,worker=${QAT_PF2}.0_qat_sym,mode=round-robin \
+	--vdev crypto_scheduler_pmd_2,worker=${QAT_PF0}.1_qat_sym,worker=${QAT_PF1}.1_qat_sym,worker=${QAT_PF2}.1_qat_sym,mode=round-robin \
+	--vdev crypto_scheduler_pmd_3,worker=${QAT_PF0}.2_qat_sym,worker=${QAT_PF1}.2_qat_sym,worker=${QAT_PF2}.2_qat_sym,mode=round-robin \
+	--vdev crypto_scheduler_pmd_4,worker=${QAT_PF0}.3_qat_sym,worker=${QAT_PF1}.3_qat_sym,worker=${QAT_PF2}.3_qat_sym,mode=round-robin \
+	--vdev crypto_scheduler_pmd_5,worker=${QAT_PF0}.4_qat_sym,worker=${QAT_PF1}.4_qat_sym,worker=${QAT_PF2}.4_qat_sym,mode=round-robin \
+	--vdev crypto_scheduler_pmd_6,worker=${QAT_PF0}.5_qat_sym,worker=${QAT_PF1}.5_qat_sym,worker=${QAT_PF2}.5_qat_sym,mode=round-robin \
 	-l 9,10,60,11,61,12,62 -n 6 \
 	-- --buffer-sz 64,128,256,512,1024,2048 --optype cipher-then-auth --ptest throughput \
 	--auth-key-sz 64 --cipher-key-sz 16 --devtype crypto_scheduler \
