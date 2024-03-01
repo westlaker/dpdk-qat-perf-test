@@ -1,0 +1,85 @@
+(AES-GCM-128)
+sudo /home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app//dpdk-test-crypto-perf                 --socket-mem 2048,0 --legacy-mem                 -a 0000:c5:01.0  -a 0000:c5:01.1 -a 0000:c5:01.2 -a 0000:c5:01.3                 -l 4,5,13,6,14 -n 4                 -- --buffer-sz 64,128,256,512,1024,2048                 --aead-key-sz 16 --optype aead --ptest throughput --aead-aad-sz 16 --devtype crypto_qat --aead-op encrypt                 --burst-sz 32 --total-ops 30000000 --digest-sz 16 --aead-algo aes-gcm --aead-iv-sz 12
+EAL: Detected CPU lcores: 64
+EAL: Detected NUMA nodes: 1
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 2048 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Using IOMMU type 1 (Type 1)
+EAL: Probe PCI driver: qat (8086:37c9) device: 0000:c5:01.0 (socket 0)
+CRYPTODEV: Creating cryptodev 0000:c5:01.0_qat_sym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 0000:c5:01.0_qat_asym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 0000:c5:01.1 (socket 0)
+CRYPTODEV: Creating cryptodev 0000:c5:01.1_qat_sym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.1_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 0000:c5:01.1_qat_asym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.1_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 0000:c5:01.2 (socket 0)
+CRYPTODEV: Creating cryptodev 0000:c5:01.2_qat_sym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.2_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 0000:c5:01.2_qat_asym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.2_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 0000:c5:01.3 (socket 0)
+CRYPTODEV: Creating cryptodev 0000:c5:01.3_qat_sym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.3_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 0000:c5:01.3_qat_asym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.3_qat_asym,socket id: 0, max queue pairs: 0
+CRYPTODEV: elt_size 0 is expanded to 384
+Allocated pool "priv_sess_mp_0" on socket 0
+Allocated pool "sess_mp_0" on socket 0
+# Crypto Performance Application Options:
+#
+# cperf test: throughput
+#
+# size of crypto op / mbuf pool: 8192
+# total number of ops: 30000000
+# buffer sizes: 64 128 256 512 1024 2048 
+# burst sizes: 32 
+
+# segment size: 2064
+#
+# cryptodev type: crypto_qat
+#
+# number of queue pairs per device: 1
+# crypto operation: aead
+# sessionless: no
+# out of place: no
+#
+# aead algorithm: aes-gcm
+# aead operation: encrypt
+# aead key size: 16
+# aead iv size: 12
+# aead digest size: 16
+# aead aad size: 16
+#
+    lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
+
+          13          64          32    30000000    30000000   371472833   356612734      1.3741      0.7035     1601.10
+          14          64          32    30000000    30000000   380554025   365698256      1.3740      0.7035     1601.11
+           6          64          32    30000000    30000000   385196133   370329992      1.3740      0.7035     1601.16
+           5          64          32    30000000    30000000   387422996   372519318      1.3740      0.7035     1601.17
+          13         128          32    30000000    30000000   373243589   358354886      1.3691      1.4020     1606.89
+           6         128          32    30000000    30000000   387021552   372130368      1.3689      1.4018     1607.12
+           5         128          32    30000000    30000000   389616183   374674450      1.3688      1.4017     1607.21
+          14         128          32    30000000    30000000   382217874   367312544      1.3688      1.4017     1607.23
+           5         256          32    30000000    30000000   394796343   379406397      1.3485      2.7618     1631.42
+          14         256          32    30000000    30000000   387453915   372096958      1.3485      2.7616     1631.50
+          13         256          32    30000000    30000000   378722987   363346051      1.3484      2.7615     1631.57
+           6         256          32    30000000    30000000   392407296   377044514      1.3484      2.7615     1631.58
+           5         512          32    30000000    30000000   422394902   406778954      1.2761      5.2268     1724.03
+          13         512          32    30000000    30000000   404569446   388992000      1.2761      5.2268     1724.05
+          14         512          32    30000000    30000000   414325808   398735402      1.2760      5.2266     1724.11
+           6         512          32    30000000    30000000   419682300   404101444      1.2760      5.2266     1724.12
+           6        1024          32    30000000    30000000   560548397   545060660      1.0052      8.2348     2188.57
+          13        1024          32    30000000    30000000   539541645   524013333      1.0050      8.2330     2189.05
+           5        1024          32    30000000    30000000   563696814   548133493      1.0050      8.2328     2189.09
+          14        1024          32    30000000    30000000   554938256   539369396      1.0050      8.2327     2189.13
+           6        2048          32    30000000    30000000   956750233   941633957      0.6332     10.3737     3474.62
+          13        2048          32    30000000    30000000   919133335   903926265      0.6332     10.3737     3474.65
+           5        2048          32    30000000    30000000   959968704   944728831      0.6332     10.3735     3474.69
+          14        2048          32    30000000    30000000   950492722   935220241      0.6331     10.3734     3474.73
+

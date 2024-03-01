@@ -1,0 +1,89 @@
+(AES-CBC128/SHA1-HMAC)
+sudo /home/ubuntu/dpdk-stable-21.11.4/build/x86_64-native-linuxapp-gcc/app//dpdk-test-crypto-perf                 --socket-mem 2048,0 --legacy-mem                 -a 0000:c5:01.0  -a 0000:c5:01.1 -a 0000:c5:01.2 -a 0000:c5:01.3                 -l 4,5,13,6,14 -n 4                 -- --buffer-sz 64,128,256,512,1024,2048                 --optype cipher-then-auth --ptest throughput --auth-key-sz 64 --cipherkey-sz 16 i                --devtype crypto_qat --cipher-iv-sz 16 --auth-op generate --burst-sz 32                 --total-ops 30000000 --digest-sz 20 --auth-algo sha1-hmac --cipher-algo aes-cbc --cipher-op encrypt
+EAL: Detected CPU lcores: 64
+EAL: Detected NUMA nodes: 1
+EAL: Detected static linkage of DPDK
+EAL: Multi-process socket /var/run/dpdk/rte/mp_socket
+EAL: Selected IOVA mode 'PA'
+EAL: No available 2048 kB hugepages reported
+EAL: VFIO support initialized
+EAL: Using IOMMU type 1 (Type 1)
+EAL: Probe PCI driver: qat (8086:37c9) device: 0000:c5:01.0 (socket 0)
+CRYPTODEV: Creating cryptodev 0000:c5:01.0_qat_sym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 0000:c5:01.0_qat_asym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.0_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 0000:c5:01.1 (socket 0)
+CRYPTODEV: Creating cryptodev 0000:c5:01.1_qat_sym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.1_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 0000:c5:01.1_qat_asym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.1_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 0000:c5:01.2 (socket 0)
+CRYPTODEV: Creating cryptodev 0000:c5:01.2_qat_sym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.2_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 0000:c5:01.2_qat_asym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.2_qat_asym,socket id: 0, max queue pairs: 0
+EAL: Probe PCI driver: qat (8086:37c9) device: 0000:c5:01.3 (socket 0)
+CRYPTODEV: Creating cryptodev 0000:c5:01.3_qat_sym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.3_qat_sym,socket id: 0, max queue pairs: 0
+CRYPTODEV: Creating cryptodev 0000:c5:01.3_qat_asym
+CRYPTODEV: Initialisation parameters - name: 0000:c5:01.3_qat_asym,socket id: 0, max queue pairs: 0
+CRYPTODEV: elt_size 0 is expanded to 384
+Allocated pool "priv_sess_mp_0" on socket 0
+Allocated pool "sess_mp_0" on socket 0
+# Crypto Performance Application Options:
+#
+# cperf test: throughput
+#
+# size of crypto op / mbuf pool: 8192
+# total number of ops: 30000000
+# buffer sizes: 64 128 256 512 1024 2048 
+# burst sizes: 32 
+
+# segment size: 2068
+#
+# cryptodev type: crypto_qat
+#
+# number of queue pairs per device: 1
+# crypto operation: cipher-then-auth
+# sessionless: no
+# out of place: no
+#
+# auth algorithm: sha1-hmac
+# auth operation: generate
+# auth key size: 64
+# auth iv size: 0
+# auth digest size: 20
+#
+# cipher algorithm: aes-cbc
+# cipher operation: encrypt
+# cipher key size: 16
+# cipher iv size: 16
+#
+    lcore id    Buf Size  Burst Size    Enqueued    Dequeued  Failed Enq  Failed Deq        MOps        Gbps  Cycles/Buf
+
+           6          64          32    30000000    30000000   329196349   314412200      1.5894      0.8138     1384.15
+          14          64          32    30000000    30000000   325017008   310306831      1.5893      0.8137     1384.24
+          13          64          32    30000000    30000000   314173621   299451248      1.5892      0.8137     1384.30
+           5          64          32    30000000    30000000   331178062   316382501      1.5892      0.8137     1384.32
+          14         128          32    30000000    30000000   329630636   314840274      1.5726      1.6104     1398.92
+           5         128          32    30000000    30000000   335529005   320656955      1.5726      1.6104     1398.95
+          13         128          32    30000000    30000000   318284230   303470475      1.5725      1.6103     1399.03
+           6         128          32    30000000    30000000   333686959   318804283      1.5725      1.6103     1399.03
+           6         256          32    30000000    30000000   343644767   328474836      1.5341      3.1418     1434.10
+           5         256          32    30000000    30000000   345326795   330149693      1.5340      3.1417     1434.13
+          14         256          32    30000000    30000000   339456959   324339578      1.5340      3.1416     1434.18
+          13         256          32    30000000    30000000   327554026   312421984      1.5340      3.1415     1434.20
+          13         512          32    30000000    30000000   349726419   334207064      1.4500      5.9390     1517.28
+          14         512          32    30000000    30000000   363118217   347634981      1.4499      5.9389     1517.31
+           5         512          32    30000000    30000000   369460130   353905970      1.4496      5.9375     1517.68
+           6         512          32    30000000    30000000   367740547   352189420      1.4496      5.9375     1517.69
+          14        1024          32    30000000    30000000   493262211   476898394      1.1261      9.2248     1953.68
+           5        1024          32    30000000    30000000   500421402   483990277      1.1256      9.2212     1954.45
+           6        1024          32    30000000    30000000   498544675   482126953      1.1254      9.2191     1954.90
+          13        1024          32    30000000    30000000   474091398   457676833      1.1253      9.2185     1955.03
+          14        2048          32    30000000    30000000   899287838   881128349      0.6693     10.9657     3287.04
+           5        2048          32    30000000    30000000   908442736   890231318      0.6692     10.9647     3287.34
+           6        2048          32    30000000    30000000   904885743   886752809      0.6692     10.9647     3287.34
+          13        2048          32    30000000    30000000   857933835   839703229      0.6692     10.9644     3287.44
+
