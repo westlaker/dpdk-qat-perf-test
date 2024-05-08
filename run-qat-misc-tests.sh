@@ -112,4 +112,19 @@ case $1 in
 		  --aead-key-sz 16 --aead-iv-sz 16 --aead-op encrypt --aead-aad-sz 16 --digest-sz 16 --optype aead \
 		  --burst-sz 32 --ptest verify --total-ops 30 --test-file test_aes_gcm.data
 		;;
+
+	5)
+
+		echo "sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf \
+		-l 1-2 -a ${QAT_PF0}.0 \
+		-- --devtype crypto_qat --buffer-sz 64,128,256,512,1024,2048 \
+		--cipher-algo aes-cbc --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only \
+		--ptest throughput --total-ops 30000000"
+
+		sudo ${DPDK_TEST_CRYPTO_PERF}/dpdk-test-crypto-perf \
+		-l 1-2 -a ${QAT_PF0}.0 \
+		-- --devtype crypto_qat --buffer-sz 64,128,256,512,1024,2048 \
+		--cipher-algo aes-cbc --cipher-key-sz 16 --cipher-iv-sz 16 --cipher-op encrypt --optype cipher-only \
+		--ptest throughput --total-ops 30000000
+		;;
 esac
